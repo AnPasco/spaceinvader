@@ -34,8 +34,7 @@ public class SpaceInvaders {
 		return vaisseau != null;
 	}
 
-	@Override
-	public String toString() {
+	public String recupererEspaceJeuDansChaineASCII() {
 		StringBuilder espaceDeJeu = new StringBuilder();
 		for (int y = 0; y < hauteur; y++) {
 			for (int x = 0; x < longueur; x++) {
@@ -44,6 +43,11 @@ public class SpaceInvaders {
 			espaceDeJeu.append(MARQUE_FIN_LIGNE);
 		}
 		return espaceDeJeu.toString();
+	}
+
+	@Override
+	public String toString() {
+		return recupererEspaceJeuDansChaineASCII();
 	}
 
 }
