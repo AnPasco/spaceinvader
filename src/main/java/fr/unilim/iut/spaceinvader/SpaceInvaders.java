@@ -57,10 +57,21 @@ public class SpaceInvaders {
 		return espaceDeJeu.toString();
 	}
 
+	private boolean positionVaisseauInferieurLongueurJeu() {
+		return vaisseau.abscisse() < (longueur - 1);
+	}
+
 	public void deplacerVaisseauVersLaDroite() {
-		   if (vaisseau.abscisse() < (longueur-1)) {
-			   vaisseau.seDeplacerVersLaDroite();
-		   }
+		if (positionVaisseauInferieurLongueurJeu()) {
+			vaisseau.seDeplacerVersLaDroite();
+		}
+	}
+
+	public void deplacerVaisseauVersLaGauche() {
+		if (positionVaisseauInferieurLongueurJeu()) {
+			vaisseau.seDeplacerVersLaGauche();
+		}
+
 	}
 
 	@Override
