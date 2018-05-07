@@ -92,4 +92,16 @@ public class SpaceInvadersTest {
 				+ "...............\n" + "...............\n" + "...............\n" + "...............\n"
 				+ "...............\n" + "......V........\n", spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	}
+
+	@Test
+	public void test_VaisseauImmobile_DeplacerVaisseauVersLaGauche() {
+
+		spaceinvaders.positionnerUnNouveauVaisseau(0, 9);
+
+		spaceinvaders.deplacerVaisseauVersLaGauche();
+
+		assertEquals("" + "...............\n" + "...............\n" + "...............\n" + "...............\n"
+				+ "...............\n" + "...............\n" + "...............\n" + "...............\n"
+				+ "...............\n" + "V..............\n", spaceinvaders.recupererEspaceJeuDansChaineASCII());
+	}
 }
