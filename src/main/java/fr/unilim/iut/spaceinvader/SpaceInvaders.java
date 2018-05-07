@@ -57,6 +57,10 @@ public class SpaceInvaders {
 		return espaceDeJeu.toString();
 	}
 
+	public void deplacerVaisseauVersLaDroite() {
+		 vaisseau.seDeplacerVersLaDroite();
+	}
+
 	@Override
 	public String toString() {
 		return recupererEspaceJeuDansChaineASCII();
