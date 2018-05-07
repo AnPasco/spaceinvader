@@ -17,10 +17,12 @@ public class SpaceInvaders {
 
 	public void positionnerUnNouveauVaisseau(int x, int y) {
 
-		if (!estDansEspaceJeu(x, y))
+		if (!estDansEspaceJeu(x, y)) {
 			throw new HorsEspaceJeuException("Vous êtes en dehors de l'espace jeu");
+		} else {
+			vaisseau = new Vaisseau(x, y);
+		}
 
-		vaisseau = new Vaisseau(x, y);
 	}
 
 	private boolean estDansEspaceJeu(int x, int y) {
