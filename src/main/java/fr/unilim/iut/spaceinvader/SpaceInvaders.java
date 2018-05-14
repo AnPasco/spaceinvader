@@ -85,9 +85,14 @@ public class SpaceInvaders {
 			throw new DebordementEspaceJeuException(
 					"Le vaisseau déborde de l'espace jeu vers le bas à cause de sa hauteur");
 
-
 		vaisseau = new Vaisseau(longueur, hauteur);
 		vaisseau.positionner(x, y);
+	}
+
+	public void positionnerUnNouveauVaisseau(Dimension dimension, Position position) {
+		positionnerUnNouveauVaisseau(dimension.longueur(), dimension.hauteur(), position.abscisse(),
+				position.ordonnee());
+
 	}
 
 }

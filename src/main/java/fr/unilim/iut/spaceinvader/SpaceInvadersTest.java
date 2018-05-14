@@ -84,7 +84,7 @@ public class SpaceInvadersTest {
 
 	@Test
 	public void test_unNouveauVaisseauAvecDimensionEstCorrectementPositionneDansEspaceJeu() {
-		spaceinvaders.positionnerUnNouveauVaisseau(3, 2, 7, 9);
+		spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3,2),new Position(7,9));
 		assertEquals("" + "...............\n" + "...............\n" + "...............\n" + "...............\n"
 				+ "...............\n" + "...............\n" + "...............\n" + "...............\n"
 				+ ".......VVV.....\n" + ".......VVV.....\n", spaceinvaders.recupererEspaceJeuDansChaineASCII());
