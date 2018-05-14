@@ -104,4 +104,12 @@ public class SpaceInvadersTest {
 				+ "...............\n" + "...............\n" + "...............\n" + "...............\n"
 				+ "...............\n" + "V..............\n", spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	}
+
+	@Test
+	public void test_unNouveauVaisseauAvecDimensionEstCorrectementPositionneDansEspaceJeu() {
+		spaceinvaders.positionnerUnNouveauVaisseau(3, 2, 7, 9);
+		assertEquals("" + "...............\n" + "...............\n" + "...............\n" + "...............\n"
+				+ "...............\n" + "...............\n" + "...............\n" + "...............\n"
+				+ ".......VVV.....\n" + ".......VVV.....\n", spaceinvaders.recupererEspaceJeuDansChaineASCII());
+	}
 }
