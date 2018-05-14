@@ -10,6 +10,7 @@ public class Vaisseau {
 	}
 
 	public Vaisseau(int longueur, int hauteur, int x, int y) {
+
 		this.dimension = new Dimension(longueur, hauteur);
 		this.origine = new Position(x, y);
 	}
@@ -49,7 +50,9 @@ public class Vaisseau {
 	}
 
 	public int abscisseLaPlusADroite() {
+
 		return (this.origine.abscisse() + this.dimension.longueur() - 1);
+
 	}
 
 	public void seDeplacerVersLaDroite() {
