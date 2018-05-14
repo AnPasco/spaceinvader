@@ -1,7 +1,7 @@
 package fr.unilim.iut.spaceinvader;
 
 public class Vaisseau {
-
+	
 	Position origine;
 	Dimension dimension;
 

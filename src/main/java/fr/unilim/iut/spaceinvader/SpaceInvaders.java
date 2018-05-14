@@ -92,5 +92,6 @@ public class SpaceInvaders {
 			vaisseau = new Vaisseau(longueurVaisseau, hauteurVaisseau);
 			vaisseau.positionner(x, y);
 		}
+	  
 
 }
