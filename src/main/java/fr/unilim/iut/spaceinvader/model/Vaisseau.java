@@ -1,4 +1,4 @@
-package fr.unilim.iut.spaceinvader;
+package fr.unilim.iut.spaceinvader.model;
 
 public class Vaisseau {
 	
