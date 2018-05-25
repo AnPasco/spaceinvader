@@ -44,7 +44,7 @@ public class Vaisseau {
 		return (ordonneeLaPlusBasse() <= y) && (y <= ordonneeLaPlusHaute());
 	}
 
-	private int ordonneeLaPlusHaute() {
+	public int ordonneeLaPlusHaute() {
 		return this.origine.ordonnee();
 	}
 
@@ -57,9 +57,7 @@ public class Vaisseau {
 	}
 
 	public int abscisseLaPlusADroite() {
-
 		return (this.origine.abscisse() + this.dimension.longueur() - 1);
-
 	}
 
 	public void seDeplacerVersLaDroite() {
@@ -68,5 +66,9 @@ public class Vaisseau {
 
 	public void seDeplacerVersLaGauche() {
 		this.origine.changerAbscisse(this.origine.abscisse() - vitesse);
+	}
+	
+	public int longueur() {
+		return (this.dimension.longueur);
 	}
 }

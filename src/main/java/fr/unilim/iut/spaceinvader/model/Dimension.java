@@ -2,7 +2,7 @@ package fr.unilim.iut.spaceinvader.model;
 
 public class Dimension {
     int longueur;
-	   int hauteur;
+	int hauteur;
 
 	   public Dimension(int longueur, int hauteur) {
 		   this.longueur = longueur;
