@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-import fr.unilim.iut.spaceinvaders.moteurjeu.DessinJeu;
+import fr.unilim.iut.spaceinvader.moteurjeu.DessinJeu;
 
 public class DessinSpaceInvaders implements DessinJeu {
 
