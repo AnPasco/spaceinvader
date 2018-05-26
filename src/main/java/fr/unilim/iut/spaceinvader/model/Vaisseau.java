@@ -1,7 +1,6 @@
 package fr.unilim.iut.spaceinvader.model;
 
 public class Vaisseau {
-
 	private Position origine;
 	private Dimension dimension;
 	private int vitesse;
