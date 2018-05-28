@@ -1,6 +1,6 @@
 package fr.unilim.iut.spaceinvader.model;
 
-public class Sprite {
+public abstract class Sprite {
 
 	protected Position origine;
 	protected Dimension dimension;
@@ -8,6 +8,13 @@ public class Sprite {
 
 	public Sprite() {
 		super();
+	}
+
+	public Sprite(Position origine, Dimension dimension, int vitesse) {
+		super();
+		this.origine = origine;
+		this.dimension = dimension;
+		this.vitesse = vitesse;
 	}
 
 	public void positionner(int x, int y) {
