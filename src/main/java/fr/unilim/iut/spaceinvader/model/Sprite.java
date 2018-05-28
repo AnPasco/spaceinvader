@@ -10,7 +10,7 @@ public abstract class Sprite {
 		super();
 	}
 
-	public Sprite(Position origine, Dimension dimension, int vitesse) {
+	public Sprite(Dimension dimension, Position origine, int vitesse) {
 		super();
 		this.origine = origine;
 		this.dimension = dimension;

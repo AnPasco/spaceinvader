@@ -9,6 +9,7 @@ public class SpaceInvaders implements Jeu {
 	int longueur;
 	int hauteur;
 	Vaisseau vaisseau;
+	Missile missile;
 
 	public SpaceInvaders(int longueur, int hauteur) {
 		this.longueur = longueur;
@@ -19,13 +20,22 @@ public class SpaceInvaders implements Jeu {
 		return ((x >= 0) && (x < longueur)) && ((y >= 0) && (y < hauteur));
 	}
 
-	private char recupererMarqueDeLaPosition(int y, int x) {
+	private char recupererMarqueDeLaPosition(int x, int y) {
 		char marque;
-		if (this.aUnVaisseauQuiOccupeLaPosition(x, y))
+		if (this.aUnVaisseauQuiOccupeLaPosition(y, x))
 			marque = Constante.MARQUE_VAISSEAU;
-		else
-			marque = Constante.MARQUE_VIDE;
+		else if (this.aUnMissileQuiOccupeLaPosition(y, x))
+				marque = Constante.MARQUE_MISSILE;
+		else marque = Constante.MARQUE_VIDE;
 		return marque;
+	}
+
+	private boolean aUnMissileQuiOccupeLaPosition(int y, int x) {
+		return this.aUnMissile() && missile.occupeLaPosition(x, y);
+	}
+
+	private boolean aUnMissile() {
+		return missile != null;
 	}
 
 	private boolean aUnVaisseauQuiOccupeLaPosition(int y, int x) {
@@ -125,5 +135,9 @@ public class SpaceInvaders implements Jeu {
 		Position positionVaisseau = new Position(this.longueur / 2, this.hauteur - 1);
 		Dimension dimensionVaisseau = new Dimension(Constante.VAISSEAU_LONGUEUR, Constante.VAISSEAU_HAUTEUR);
 		positionnerUnNouveauVaisseau(dimensionVaisseau, positionVaisseau, Constante.VAISSEAU_VITESSE);
+	}
+
+	public void tirerUnMissile(Dimension dimension, int vitesse) {
+		this.missile = this.vaisseau.tirerUnMissile(dimension,vitesse);
 	}
 }
