@@ -50,14 +50,6 @@ public abstract class Sprite {
 		return (this.origine.abscisse() + this.dimension.longueur() - 1);
 	}
 
-	public void seDeplacerVersLaDroite() {
-		this.origine.changerAbscisse(this.origine.abscisse() + vitesse);
-	}
-
-	public void seDeplacerVersLaGauche() {
-		this.origine.changerAbscisse(this.origine.abscisse() - vitesse);
-	}
-
 	public int longueur() {
 		return (this.dimension.longueur);
 	}
@@ -65,5 +57,17 @@ public abstract class Sprite {
 	public int hauteur() {
 		return this.dimension.hauteur();
 	}
+
+	public void deplacerVersLeHaut() {
+		this.origine.changerOrdonnee(this.origine.ordonnee() - vitesse);
+	}
+
+	public void deplacerVerticalementVers(Direction direction) {
+		this.origine.changerOrdonnee(this.origine.ordonnee() + direction.valeur() * vitesse);
+	}
+	
+	 public void deplacerHorizontalementVers(Direction direction) {
+			this.origine.changerAbscisse(this.origine.abscisse() + direction.valeur()*vitesse);
+		}
 
 }
