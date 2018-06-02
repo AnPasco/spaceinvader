@@ -1,5 +1,7 @@
 package fr.unilim.iut.spaceinvader.model;
 
+import javax.management.relation.RelationServiceNotRegisteredException;
+
 import fr.unilim.iut.spaceinvader.moteurjeu.Commande;
 import fr.unilim.iut.spaceinvader.moteurjeu.Jeu;
 import fr.unilim.iut.spaceinvader.utils.DebordementEspaceJeuException;
@@ -9,6 +11,7 @@ import fr.unilim.iut.spaceinvader.utils.MissileException;
 public class SpaceInvaders implements Jeu {
 	int longueur;
 	int hauteur;
+	Collision collision;
 	Vaisseau vaisseau;
 	Missile missile;
 	Envahisseur envahisseur;
@@ -232,7 +235,6 @@ public class SpaceInvaders implements Jeu {
 	}
 
 	public void deplacerEnvahisseur() {
-		
 		if (envahisseur.isDernierDeplacementVersLaDroite() && envahisseur.abscisseLaPlusADroite() <= (longueur) ) {
 			envahisseur.deplacerHorizontalementVers(Direction.DROITE);
 			envahisseur.setDernierDeplacementVersLaDroite(true);
@@ -241,7 +243,6 @@ public class SpaceInvaders implements Jeu {
 			envahisseur.deplacerHorizontalementVers(Direction.GAUCHE);
 			envahisseur.setDernierDeplacementVersLaDroite(false);
 		}
-		
 		if(envahisseur.abscisseLaPlusAGauche() <= 0) {
 			envahisseur.deplacerHorizontalementVers(Direction.DROITE);
 			envahisseur.setDernierDeplacementVersLaDroite(true);
