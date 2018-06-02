@@ -19,4 +19,7 @@ public class Constante {
 	
 	public static final char MARQUE_MISSILE = 'M';
 	public static final char MARQUE_ENVAHISSEUR = 'E';
+	public static final int ENVAHISSEUR_LONGUEUR = 15;
+	public static final int ENVAHISSEUR_HAUTEUR = 10;
+	public static final int ENVAHISSEUR_VITESSE = 8;
 }
