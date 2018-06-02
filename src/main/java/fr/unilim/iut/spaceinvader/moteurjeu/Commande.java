@@ -15,23 +15,20 @@ public class Commande {
 	public boolean droite;
 	public boolean haut;
 	public boolean bas;
-
+	public boolean tirer;
+	
 	public Commande()
 	{
 		
 	}
 	
-	/**
-	 * constructeur par copie
-	 * copie la commande pour en creer une nouvelle
-	 * @param commandeACopier
-	 */
 	public Commande(Commande commandeACopier)
 	{
 		this.bas=commandeACopier.bas;
 		this.haut=commandeACopier.haut;
 		this.gauche=commandeACopier.gauche;
-		this.droite=commandeACopier.droite;		
+		this.droite=commandeACopier.droite;	
+		this.tirer=commandeACopier.tirer;
 	}
 	
 }

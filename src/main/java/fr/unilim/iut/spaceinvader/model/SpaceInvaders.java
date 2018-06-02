@@ -35,8 +35,12 @@ public class SpaceInvaders implements Jeu {
 		return this.aUnMissile() && missile.occupeLaPosition(x, y);
 	}
 
-	private boolean aUnMissile() {
+	public boolean aUnMissile() {
 		return missile != null;
+	}
+	
+	public Missile recupererMissile() {
+		return this.missile;
 	}
 
 	private boolean aUnVaisseauQuiOccupeLaPosition(int y, int x) {
@@ -124,6 +128,10 @@ public class SpaceInvaders implements Jeu {
 
 		if (commandeUser.droite) {
 			deplacerVaisseauVersLaDroite();
+		}
+		if(commandeUser.tirer) {
+			Dimension dimensionMissile = new Dimension(Constante.MISSILE_LONGUEUR, Constante.MISSILE_HAUTEUR);
+			tirerUnMissile(dimensionMissile, Constante.MISSILE_VITESSE);
 		}
 
 	}
