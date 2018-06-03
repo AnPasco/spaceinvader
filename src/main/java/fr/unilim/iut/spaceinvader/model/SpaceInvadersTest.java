@@ -308,21 +308,11 @@ public class SpaceInvadersTest {
 		assertEquals(Collision.detecterCollision(spaceinvaders.recupererMissile(), spaceinvaders.recupererEnvahisseur()),
 				true);
 	}
-
-	@Test
-	public void test_TirCollisionMissileTransperseEnvahisseur() {
-		spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(5, 2), new Position(6, 9), 1);
-		spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(5, 1), new Position(6, 6), 1);
-		spaceinvaders.tirerUnMissile(new Dimension(1, 3), 1);
-
-		assertEquals(Collision.detecterCollision(spaceinvaders.recupererMissile(), spaceinvaders.recupererEnvahisseur()),
-				true);
-	}
 	
 	@Test
     public void test_TirMissilePasDeCollisionAvecEnvahisseur() {
-        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3, 2), new Position(7, 9), 1);
-        spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(5, 1), new Position(6, 0), 1);
+        spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3, 2), new Position(8, 9), 1);
+        spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(3, 1), new Position(6, 0), 1);
         spaceinvaders.tirerUnMissile(new Dimension(1, 1), 1);
         spaceinvaders.deplacerMissile();
 
