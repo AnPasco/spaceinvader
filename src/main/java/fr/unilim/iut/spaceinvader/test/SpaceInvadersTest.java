@@ -2,11 +2,8 @@ package fr.unilim.iut.spaceinvader.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
-
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
 import fr.unilim.iut.spaceinvader.model.Dimension;
 import fr.unilim.iut.spaceinvader.model.Position;
 import fr.unilim.iut.spaceinvader.model.SpaceInvaders;

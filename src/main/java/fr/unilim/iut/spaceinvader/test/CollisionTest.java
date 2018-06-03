@@ -1,10 +1,8 @@
 package fr.unilim.iut.spaceinvader.test;
 
 import static org.junit.Assert.assertEquals;
-
 import org.junit.Before;
 import org.junit.Test;
-
 import fr.unilim.iut.spaceinvader.model.Collision;
 import fr.unilim.iut.spaceinvader.model.Dimension;
 import fr.unilim.iut.spaceinvader.model.Position;
@@ -46,12 +44,27 @@ public class CollisionTest {
 	@Test
 	public void test_TirMissilePasDeCollisionAvecEnvahisseur() {
 		spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3, 2), new Position(8, 9), 1);
-		spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(3, 1), new Position(6, 0), 1);
+		spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(3, 1), new Position(9, 7), 1);
 		spaceinvaders.tirerUnMissile(new Dimension(1, 1), 1);
+
 		spaceinvaders.deplacerMissile();
 
 		assertEquals(
 				Collision.detecterCollision(spaceinvaders.recupererMissile(), spaceinvaders.recupererEnvahisseur()),
 				false);
+	}
+
+	@Test
+	public void test_collisionEntreSpriteGaucheEtDroite() {
+		spaceinvaders.positionnerUnNouvelEnvahisseur(new Dimension(2, 2), new Position(0, 1), 1);
+		spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3, 2), new Position(1, 9), 1);
+		spaceinvaders.tirerUnMissile(new Dimension(1, 2), 1);
+		for (int i = 0; i < 5; i++) {
+			spaceinvaders.deplacerMissile();
+		}
+		spaceinvaders.deplacerEnvahisseur();
+		assertEquals("" + "...............\n" + "...............\n" + "...............\n" + "...............\n"
+				+ "...............\n" + "...............\n" + "...............\n" + "...............\n"
+				+ ".VVV...........\n" + ".VVV...........\n", spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	}
 }
