@@ -1,5 +1,7 @@
 package fr.unilim.iut.spaceinvader.model;
 
+import java.util.List;
+
 import javax.management.relation.RelationServiceNotRegisteredException;
 import fr.unilim.iut.spaceinvader.moteurjeu.Commande;
 import fr.unilim.iut.spaceinvader.moteurjeu.Jeu;
